@@ -205,6 +205,13 @@
       overflow: hidden;
     }
 
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .img-placeholder {
       font-weight: 500;
       color: #7c7caa;
@@ -216,6 +223,9 @@
       justify-content: center;
       font-size: 3rem;
       text-transform: uppercase;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .card-info {
@@ -385,36 +395,36 @@
 
     (function() {
       const productsData = [
-        { name: "Сукня легка", desc: "Повсякденна сукня з льону", priceUah: 1250 },
-        { name: "Джинси прямі", desc: "Класичні сині джинси", priceUah: 1890 },
-        { name: "Футболка бавовна", desc: "Базова біла футболка", priceUah: 560 },
-        { name: "Светр в'язаний", desc: "Теплий светр oversize", priceUah: 1450 },
-        { name: "Куртка шкіряна", desc: "Косуха з екошкіри", priceUah: 3200 },
-        { name: "Спідниця міді", desc: "Сатин, колір шампань", priceUah: 980 },
-        { name: "Сорочка офісна", desc: "Блакитна, бавовна", priceUah: 870 },
-        { name: "Шорти денім", desc: "Висока посадка", priceUah: 780 },
-        { name: "Пальто класичне", desc: "Вовняне, бежеве", priceUah: 4200 },
-        { name: "Худі з капюшоном", desc: "Сірий меланж, фліс", priceUah: 1350 },
-        { name: "Сукня вечірня", desc: "Чорна, оксамит", priceUah: 2650 },
-        { name: "Джемпер рубчик", desc: "Тонкий трикотаж", priceUah: 1100 },
-        { name: "Брюки палаццо", desc: "Широкі, чорні", priceUah: 1520 },
-        { name: "Топ шовковий", desc: "Без рукавів, ніжний", priceUah: 690 },
-        { name: "Кардиган довгий", desc: "В'язка, кишені", priceUah: 1780 },
-        { name: "Кросівки білі", desc: "Шкіра, платформа", priceUah: 2400 },
-        { name: "Туфлі човники", desc: "Замша, nude", priceUah: 1950 },
-        { name: "Сандалі гладіатор", desc: "Плоска підошва", priceUah: 1280 },
-        { name: "Ремінь шкіряний", desc: "Чорний, пряжка", priceUah: 650 },
-        { name: "Сумка шопер", desc: "Бавовна, принт", priceUah: 520 },
-        { name: "Шарф кашемір", desc: "Сірий, м'який", priceUah: 890 },
-        { name: "Шапка біні", desc: "Рибай, смужка", priceUah: 430 },
-        { name: "Пуховик зимовий", desc: "Легкий, водостійкий", priceUah: 3800 },
-        { name: "Жакет структурований", desc: "Клітинка, вовна", priceUah: 2100 },
-        { name: "Блуза з бантом", desc: "Шифон, рожева", priceUah: 950 },
-        { name: "Комбінезон лляний", desc: "Льон, вільний крій", priceUah: 1650 },
-        { name: "Спідниця плісе", desc: "Металік, золото", priceUah: 1150 },
-        { name: "Жилетка стьобана", desc: "Світло-бежева", priceUah: 1320 },
-        { name: "Сорочка денім", desc: "Світлий денім", priceUah: 1050 },
-        { name: "Лосини спортивні", desc: "Чорні, висока талія", priceUah: 720 }
+        { name: "Nike Polo", desc: "Повсякденна сукня з льону", priceUah: 800, image: "https://learn.logikaschool.com/uploads/student/5784044/6a3aef6239d86.jpg" },
+        { name: "Adidas Training AEROREADY", desc: "Класичні сині джинси", priceUah: 850, image: "https://learn.logikaschool.com/uploads/student/5784044/6a3af30553f0d.jpg" },
+        { name: "Puma BMW Motorsport Graphic", desc: "Базова біла футболка", priceUah: 500, image: "https://learn.logikaschool.com/uploads/student/5784044/6a3af41b9a039.jpg" },
+        { name: "Nike Dri-Fit", desc: "Теплий светр oversize", priceUah: 600, image: "https://learn.logikaschool.com/uploads/student/5784044/6a3af80fecb95.jpg" },
+        { name: "Куртка шкіряна", desc: "Косуха з екошкіри", priceUah: 3200, image: "https://learn.logikaschool.com/uploads/student/5784044/jacket1.jpg" },
+        { name: "Спідниця міді", desc: "Сатин, колір шампань", priceUah: 980, image: "https://learn.logikaschool.com/uploads/student/5784044/skirt1.jpg" },
+        { name: "Сорочка офісна", desc: "Блакитна, бавовна", priceUah: 870, image: "https://learn.logikaschool.com/uploads/student/5784044/shirt1.jpg" },
+        { name: "Шорти денім", desc: "Висока посадка", priceUah: 780, image: "https://learn.logikaschool.com/uploads/student/5784044/shorts1.jpg" },
+        { name: "Пальто класичне", desc: "Вовняне, бежеве", priceUah: 4200, image: "https://learn.logikaschool.com/uploads/student/5784044/coat1.jpg" },
+        { name: "Худі з капюшоном", desc: "Сірий меланж, фліс", priceUah: 1350, image: "https://learn.logikaschool.com/uploads/student/5784044/hoodie1.jpg" },
+        { name: "Сукня вечірня", desc: "Чорна, оксамит", priceUah: 2650, image: "https://learn.logikaschool.com/uploads/student/5784044/dress2.jpg" },
+        { name: "Джемпер рубчик", desc: "Тонкий трикотаж", priceUah: 1100, image: "https://learn.logikaschool.com/uploads/student/5784044/jumper1.jpg" },
+        { name: "Брюки палаццо", desc: "Широкі, чорні", priceUah: 1520, image: "https://learn.logikaschool.com/uploads/student/5784044/pants1.jpg" },
+        { name: "Топ шовковий", desc: "Без рукавів, ніжний", priceUah: 690, image: "https://learn.logikaschool.com/uploads/student/5784044/top1.jpg" },
+        { name: "Кардиган довгий", desc: "В'язка, кишені", priceUah: 1780, image: "https://learn.logikaschool.com/uploads/student/5784044/cardigan1.jpg" },
+        { name: "Кросівки білі", desc: "Шкіра, платформа", priceUah: 2400, image: "https://learn.logikaschool.com/uploads/student/5784044/sneakers1.jpg" },
+        { name: "Туфлі човники", desc: "Замша, nude", priceUah: 1950, image: "https://learn.logikaschool.com/uploads/student/5784044/shoes1.jpg" },
+        { name: "Сандалі гладіатор", desc: "Плоска підошва", priceUah: 1280, image: "https://learn.logikaschool.com/uploads/student/5784044/sandals1.jpg" },
+        { name: "Ремінь шкіряний", desc: "Чорний, пряжка", priceUah: 650, image: "https://learn.logikaschool.com/uploads/student/5784044/belt1.jpg" },
+        { name: "Сумка шопер", desc: "Бавовна, принт", priceUah: 520, image: "https://learn.logikaschool.com/uploads/student/5784044/bag1.jpg" },
+        { name: "Шарф кашемір", desc: "Сірий, м'який", priceUah: 890, image: "https://learn.logikaschool.com/uploads/student/5784044/scarf1.jpg" },
+        { name: "Шапка біні", desc: "Рибай, смужка", priceUah: 430, image: "https://learn.logikaschool.com/uploads/student/5784044/hat1.jpg" },
+        { name: "Пуховик зимовий", desc: "Легкий, водостійкий", priceUah: 3800, image: "https://learn.logikaschool.com/uploads/student/5784044/downjacket1.jpg" },
+        { name: "Жакет структурований", desc: "Клітинка, вовна", priceUah: 2100, image: "https://learn.logikaschool.com/uploads/student/5784044/jacket2.jpg" },
+        { name: "Блуза з бантом", desc: "Шифон, рожева", priceUah: 950, image: "https://learn.logikaschool.com/uploads/student/5784044/blouse1.jpg" },
+        { name: "Комбінезон лляний", desc: "Льон, вільний крій", priceUah: 1650, image: "https://learn.logikaschool.com/uploads/student/5784044/overalls1.jpg" },
+        { name: "Спідниця плісе", desc: "Металік, золото", priceUah: 1150, image: "https://learn.logikaschool.com/uploads/student/5784044/skirt2.jpg" },
+        { name: "Жилетка стьобана", desc: "Світло-бежева", priceUah: 1320, image: "https://learn.logikaschool.com/uploads/student/5784044/vest1.jpg" },
+        { name: "Сорочка денім", desc: "Світлий денім", priceUah: 1050, image: "https://learn.logikaschool.com/uploads/student/5784044/denimshirt1.jpg" },
+        { name: "Лосини спортивні", desc: "Чорні, висока талія", priceUah: 720, image: "https://learn.logikaschool.com/uploads/student/5784044/leggings1.jpg" }
       ];
 
       const EXCHANGE_RATE_UAH_TO_PLN = 0.11;
@@ -431,7 +441,7 @@
       function getLocalizedName(product, lang) {
         if (lang === 'pl') {
           const plNames = {
-            "Сукня легка": "Lekka sukienka", "Джинси прямі": "Proste jeansy", "Футболка бавовна": "Bawełniana koszulka",
+            "Nike Polo": "Nike Polo", "Adidas Training AEROREADY": "Adidas Training AEROREADY", "Puma BMW Motorsport Graphic": "Puma BMW Motorsport Graphic",
             "Светр в'язаний": "Sweter dzianinowy", "Куртка шкіряна": "Skórzana kurtka", "Спідниця міді": "Spódnica midi",
             "Сорочка офісна": "Koszula biurowa", "Шорти денім": "Szorty jeansowe", "Пальто класичне": "Płaszcz klasyczny",
             "Худі з капюшоном": "Bluza z kapturem", "Сукня вечірня": "Suknia wieczorowa", "Джемпер рубчик": "Sweter ściągaczowy",
@@ -473,12 +483,36 @@
         productsData.forEach(prod => {
           const card = document.createElement('div');
           card.className = 'product-card';
+          
           const imageBox = document.createElement('div');
           imageBox.className = 'image-box';
+          
+          // Создаем изображение товара
+          const productImage = document.createElement('img');
+          productImage.className = 'product-image';
+          productImage.src = prod.image;
+          productImage.alt = getLocalizedName(prod, lang);
+          productImage.loading = 'lazy';
+          
+          // Создаем плейсхолдер на случай ошибки загрузки
           const placeholderDiv = document.createElement('div');
           placeholderDiv.className = 'img-placeholder';
           placeholderDiv.textContent = prod.name.charAt(0) + prod.name.charAt(prod.name.length-1);
+          
+          // Обработчик ошибки загрузки изображения
+          productImage.onerror = function() {
+            this.style.display = 'none';
+            placeholderDiv.style.display = 'flex';
+          };
+          
+          // Обработчик успешной загрузки
+          productImage.onload = function() {
+            placeholderDiv.style.display = 'none';
+          };
+          
+          imageBox.appendChild(productImage);
           imageBox.appendChild(placeholderDiv);
+          
           const cardInfo = document.createElement('div');
           cardInfo.className = 'card-info';
           const nameEl = document.createElement('div');
