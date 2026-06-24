@@ -108,10 +108,16 @@
             }
         }
 
-        .icon {
-            font-size: 70px;
-            margin-bottom: 20px;
+        /* Логотип */
+        .logo-container {
+            margin-bottom: 25px;
             animation: pulse 2s ease-in-out infinite;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
         }
 
         @keyframes pulse {
@@ -119,7 +125,7 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.08);
             }
         }
 
@@ -277,6 +283,10 @@
                 font-size: 1.8em;
             }
 
+            .logo {
+                width: 100px;
+            }
+
             .countdown {
                 gap: 10px;
             }
@@ -312,7 +322,11 @@
 
     <!-- Основний контент -->
     <div class="container">
-        <div class="icon">🛠️</div>
+        <!-- Логотип замість емодзі -->
+        <div class="logo-container">
+            <img src="https://learn.logikaschool.com/uploads/student/5784044/6a3a74133d763.png" alt="Логотип магазину" class="logo">
+        </div>
+
         <h1>МАГАЗИН ОНОВЛЮЄТЬСЯ</h1>
         <p class="subtitle">
             Ми працюємо над покращенням, щоб зробити ваш досвід покупок ще кращим. 
@@ -355,6 +369,12 @@
             <input type="email" placeholder="Введіть ваш email" required>
             <button type="submit">Сповістити</button>
         </form>
+
+        <p class="social-text">Слідкуйте за нами в соцмережах:</p>
+        <div class="social-icons">
+            📱 💬 📷 🎵
+        </div>
+    </div>
 
     <script>
         // Таймер зворотного відліку (цільова дата: через 3 дні від сьогодні)
